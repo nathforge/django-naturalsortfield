@@ -6,6 +6,7 @@ class NaturalSortField(models.CharField):
     def __init__(self, for_field, **kwargs):
         self.for_field = for_field
         kwargs.setdefault('db_index', True)
+        kwargs.setdefault('editable', False)
         kwargs.setdefault('max_length', 255)
         super(NaturalSortField, self).__init__(**kwargs)
     
